@@ -7,23 +7,26 @@
   	<plugins>
   		<plugin>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.1</version>
+        <version>2.2</version>
         <configuration>
             <descriptorRefs>
                 <descriptorRef>jar-with-dependencies</descriptorRef>
-            </descriptorRefs>                 
+            </descriptorRefs> 
+            <finalName>pcaap-fhir-dtos</finalName>
+            <appendAssemblyId>false</appendAssemblyId>                
         </configuration>
         <executions>
             <execution>
                 <id>make-assembly</id>
                 <phase>package</phase>
                 <goals>
-                    <goal>attached</goal>
+                    <goal>single</goal>
                 </goals>
             </execution>
         </executions>
     </plugin>
   	</plugins>
+  	<finalName>${project.artifactId}</finalName>
   </build>
   <dependencies>
   	<dependency>
